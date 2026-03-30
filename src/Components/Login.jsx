@@ -61,7 +61,7 @@ const Login = () => {
       <div className="card bg-base-300 w-96 shadow-xl">
         <div className="card-body">
           <h2 className="card-title justify-center">
-            {isLoginFrom ? "Login" : "Signup"}
+            {isLoginFrom ? "LOGIN" : "SIGNUP"}
           </h2>
           <div>
             {!isLoginFrom && (
@@ -119,7 +119,7 @@ const Login = () => {
               className="btn btn-primary"
               onClick={isLoginFrom ? handleLogin : handleSignUp}
             >
-              {isLoginFrom ? "Login" : "Signup"}
+              {isLoginFrom ? "LOGIN" : "SIGNUP"}
             </button>
           </div>
           <p
