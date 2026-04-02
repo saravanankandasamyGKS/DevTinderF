@@ -13,20 +13,20 @@ const UserCard = ({ user }) => {
   console.log("Extracted Skills:", skills); // Debugging
 
   const handleSendRequest = async (status, userId) => {
-    try {
-      const res = await axios.post(
-        BASE_URL + "/request/send/" + status + "/" + userId,
-        {},
-        {
-          withCredentials: true,
-        }
-      );
-      dispatch(removeUserFromFeed(userId));
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  try {
+    const res = await axios.post(
+      `${BASE_URL}/request/send/${status}/${userId}`,
+      {},
+      { withCredentials: true }
+    );
 
+    console.log("Request sent:", res.data);
+
+    dispatch(removeUserFromFeed(userId));
+  } catch (error) {
+    console.error("Error sending request:", error.response?.data || error.message);
+  }
+};
   return (
     <div className="card grid-rows-1 bg-base-300 w-96 shadow-xl p-3">
       <figure>
