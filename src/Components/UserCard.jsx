@@ -56,7 +56,7 @@ const UserCard = ({ user }) => {
           <button
             className="btn btn-secondary"
             onClick={() => {
-              handleSendRequest("intrested", _id);
+              handleSendRequest("interested", _id);
             }}
           >
             Intrested
